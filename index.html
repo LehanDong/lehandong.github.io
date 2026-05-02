@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lehan (Emma) Dong</title>
+<meta name="description" content="Personal website of Lehan (Emma) Dong — research assistant in econometrics, NLP, and decision analytics.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:    #fbfaf6;
+    --ink:      #1a1a1a;
+    --muted:    #5a5a5a;
+    --faint:    #c8c4b8;
+    --accent:   #7a2e2e;
+    --rule:     #d8d4c7;
+    --hover-bg: #f1ede0;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 19px;
+    line-height: 1.55;
+    font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 28px 80px;
+  }
+
+  /* ===== Header ===== */
+  header.masthead {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 32px;
+    align-items: start;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 32px;
+  }
+
+  .portrait {
+    width: 140px;
+    height: 170px;
+    background: var(--faint);
+    border: 1px solid var(--rule);
+    object-fit: cover;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); font-size: 12px; font-family: 'JetBrains Mono', monospace;
+  }
+
+  h1 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 1.1;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .affiliation {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 18px;
+    margin: 0 0 10px;
+  }
+
+  .status {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--accent);
+    margin: 0 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.35; }
+  }
+
+  .contact-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .contact-line a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--faint);
+    transition: border-color 0.15s;
+  }
+  .contact-line a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+
+  /* ===== Section ===== */
+  section { margin-bottom: 44px; }
+
+  h2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  p { margin: 0 0 14px; }
+
+  a.inline {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--faint);
+  }
+  a.inline:hover { border-bottom-color: var(--accent); color: var(--accent); }
+
+  /* ===== Bio ===== */
+  .bio p { font-size: 19px; }
+
+  .cv-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 6px 14px;
+    transition: all 0.15s;
+  }
+  .cv-link:hover { background: var(--accent); color: var(--paper); }
+
+  /* ===== Item rows (Research / Industry) ===== */
+  .item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .item:last-child { border-bottom: none; }
+
+  .item-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+
+  .item-title {
+    font-weight: 500;
+    font-size: 19px;
+    margin: 0 0 4px;
+  }
+
+  .item-affil {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 16px;
+    margin: 0 0 8px;
+  }
+
+  .item-desc {
+    color: var(--ink);
+    font-size: 17px;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ===== Personal ===== */
+  .personal p {
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ===== Drop cap ===== */
+  .bio > p:first-of-type::first-letter {
+    font-size: 3.2em;
+    float: left;
+    line-height: 0.85;
+    padding: 6px 8px 0 0;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .wrap { padding: 36px 20px 60px; }
+    header.masthead {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .portrait { width: 110px; height: 130px; }
+    h1 { font-size: 30px; }
+    .item {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+    body { font-size: 17px; }
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead">
+    <!-- Replace with: <img src="photo.jpg" alt="Lehan Dong" class="portrait"> -->
+    <div class="portrait">photo</div>
+
+    <div>
+      <h1>Lehan (Emma) Dong</h1>
+      <p class="affiliation">M.S., Johns Hopkins University · Part-time RA at Oxford Saïd &amp; JHU Carey</p>
+      <p class="status">
+        <span class="status-dot"></span>
+        On the job market for pre-doctoral / full-time RA positions, with the goal of pursuing a Ph.D.
+      </p>
+      <p class="contact-line">
+        <a href="mailto:lehandongwork@gmail.com">lehandongwork@gmail.com</a> ·
+        <a href="https://github.com/LehanDong/lehanproject" target="_blank" rel="noopener">github</a> ·
+        <a href="https://www.linkedin.com/in/lehandong" target="_blank" rel="noopener">linkedin</a>
+      </p>
+    </div>
+  </header>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="bio">
+    <h2>About</h2>
+    <p>
+      I recently completed my M.S. in Business Analytics &amp; Risk Management at
+      <a href="https://carey.jhu.edu/" class="inline" target="_blank" rel="noopener">Johns Hopkins University</a> (2025),
+      and currently hold part-time research assistantships at the
+      <a href="https://www.sbs.ox.ac.uk/" class="inline" target="_blank" rel="noopener">Saïd Business School, University of Oxford</a>
+      and the Johns Hopkins Carey Business School. I was previously a research assistant at the
+      <a href="https://www.pbcsf.tsinghua.edu.cn/" class="inline" target="_blank" rel="noopener">PBC School of Finance, Tsinghua University</a>.
+      I am currently looking for a full-time pre-doctoral or research-assistant position before applying to Ph.D. programs in the next cycle.
+    </p>
+    <p>
+      My work sits at the intersection of econometrics, structural estimation, and natural language processing, organized around
+      a single question: <em>how do decisions — corporate, regulatory, judicial, and labor-market — get made under uncertainty,
+      and how can we measure the structures that shape them?</em> I use panel and structural methods (fixed effects, IV, DiD,
+      MDCEV, Markov regime-switching) alongside transformer-based text analysis (FinBERT, large-corpus NLP) to recover
+      latent signals from unstructured data: executive rhetoric, regulatory filings, judicial rulings, consumer transactions,
+      and occupational records.
+    </p>
+    <p>
+      I am particularly interested in <em>gender and labor markets</em>, the <em>fairness properties of algorithmic systems</em>
+      deployed in high-stakes settings, and projects that connect <em>structural demand estimation</em> to operational and policy
+      decisions.
+    </p>
+    <a href="cv.pdf" class="cv-link" target="_blank" rel="noopener">→ Curriculum Vitae (PDF)</a>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section>
+    <h2>Research</h2>
+
+    <div class="item">
+      <div class="item-date">2026</div>
+      <div>
+        <p class="item-title">CEO Sentiment and Multinational Strategic Repositioning in China</p>
+        <p class="item-affil">Human–Algorithm Interaction Lab, Oxford Saïd Business School</p>
+        <p class="item-desc">
+          Constructed a 572 firm-year panel from 3,300 earnings calls and 10-K/20-F filings (60 firms, 11 years),
+          linking FinBERT-scored CEO sentiment on China to firm strategy classified as <em>exit</em>, <em>maintain</em>,
+          or <em>double-down</em>. Estimated fixed-effects, ordered logit, and IV specifications with reverse-causality,
+          placebo, and first-difference tests to assess whether executive rhetoric causally predicts strategic shifts.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-date">2026</div>
+      <div>
+        <p class="item-title">ESG Performance and the Cost of Capital of Chinese Listed Firms</p>
+        <p class="item-affil">Independent project</p>
+        <p class="item-desc">
+          Built a firm-year panel of A-share listed firms (2013–2024) to examine how ESG performance affects the
+          weighted average cost of capital. Estimated two-way fixed-effects models with IV and lagged specifications
+          to address endogeneity. Found that stronger ESG performance is associated with lower capital costs, driven
+          primarily by reductions in equity financing costs and varying by firm size and information environment.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-date">2025 – present</div>
+      <div>
+        <p class="item-title">Structural Demand Estimation for Grocery Retail Pricing</p>
+        <p class="item-affil">Johns Hopkins Carey Business School</p>
+        <p class="item-desc">
+          Estimated an MDCEV (Multiple Discrete-Continuous Extreme Value) model on 36.2M grocery transactions
+          to jointly recover within-trip product selection and quantity decisions — satiation, price sensitivity,
+          and cross-product substitution — via L-BFGS-B in Python. Building a two-stage demand framework that pairs
+          MDCEV with a Poisson/Negative Binomial visit-arrival model, producing direct inputs to pricing optimization
+          and newsvendor inventory problems.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-date">2025</div>
+      <div>
+        <p class="item-title">Mortgage Lending Equity in the South Atlantic: A CRA-Linked HMDA Analysis</p>
+        <p class="item-affil">Independent project</p>
+        <p class="item-desc">
+          Analyzed 10M+ HMDA records across 593,033 loan applications using ten logistic specifications to identify
+          approval and pricing disparities for minority and low-income borrowers. Uncovered a paradox: CRA-covered
+          lenders showed <em>higher</em> approval rates but charged <em>elevated</em> interest spreads to minority
+          borrowers — illustrating how regulation and semi-automated underwriting interact to shape credit access.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-date">2025</div>
+      <div>
+        <p class="item-title">From Judicial Bias to Algorithmic Injustice: Governing Fairness in AI-Augmented Decision Systems</p>
+        <p class="item-affil">Independent project</p>
+        <p class="item-desc">
+          Audited 233 domestic-violence self-defense rulings across 32 Chinese provinces using OLS, logit, and
+          negative binomial regressions (p &lt; 0.001) to quantify sentencing disparities and victim-blaming patterns.
+          Developed a governance framework for judicial AI proposing bias-aware optimization, counterfactual data
+          augmentation, and institutional oversight — with implications for fairness testing in high-stakes AI systems.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-date">2024 – 2025</div>
+      <div>
+        <p class="item-title">Seigniorage, Tariff Shocks, and Cross-Border Capital Flows</p>
+        <p class="item-affil">Center for International Finance and Economics, Tsinghua PBC School of Finance</p>
+        <p class="item-desc">
+          Constructed quarterly seigniorage measures from 1951–2026 and estimated Markov regime-switching models
+          to identify structural breaks across monetary regimes. Analyzed Trump-era tariff shocks across the U.S.,
+          U.K., Japan, and EU using DiD and panel FE estimators on sectoral employment and firm productivity.
+          Supported analysis of the Hengqin cross-border capital account liberalization project.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-date">2024</div>
+      <div>
+        <p class="item-title">Occupational Gender Segregation in China, 2012–2022 <span style="font-style:italic; color:var(--muted); font-weight:400;">— Undergraduate Thesis</span></p>
+        <p class="item-affil">Henan University &amp; Victoria University, Joint B.S. Thesis</p>
+        <p class="item-desc">
+          Constructed an occupation-by-year panel from Chinese labor-force microdata (2012–2022) and decomposed
+          gender segregation using Duncan and Karmel–MacLachlan indices. Examined how industry composition,
+          educational attainment, and regional development jointly shape the persistence of female under-representation
+          across occupations, with attention to shifts during and after the COVID-19 period.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INDUSTRY ============ -->
+  <section>
+    <h2>Industry Experience</h2>
+
+    <div class="item">
+      <div class="item-date">Feb 2026 – present</div>
+      <div>
+        <p class="item-title">Instructor &amp; Admissions Coach</p>
+        <p class="item-affil">Shunjia Education Technology · Remote</p>
+        <p class="item-desc">
+          Mentor high school students preparing for university applications, with a focus on English-language
+          interview preparation and academic writing. Design individualized coaching plans and provide one-on-one
+          feedback on personal statements, mock interviews, and language fluency.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-date">Aug – Sep 2025</div>
+      <div>
+        <p class="item-title">AI Governance Intern</p>
+        <p class="item-affil">RADAR Governance · Washington, D.C.</p>
+        <p class="item-desc">
+          Authored a policy article on AI governance in M&amp;A due diligence, examining governance gaps as a
+          source of hidden transaction risk.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-date">May – Jul 2024</div>
+      <div>
+        <p class="item-title">Investment Banking Intern</p>
+        <p class="item-affil">Sinolink Securities, Equity Underwriting · Beijing</p>
+        <p class="item-desc">
+          Performed valuation and industry analysis on a NEEQ listing project: built comparable-company, precedent-transaction,
+          and DCF models; benchmarked 10+ comparable firms via Wind and regulatory filings; mapped 15+ compliance risks
+          against regulator inquiry letters; reviewed transaction data for 185 customers and 27 suppliers in support
+          of due diligence and related-party identification.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-date">Jul – Sep 2023</div>
+      <div>
+        <p class="item-title">Financial Risk Management Intern</p>
+        <p class="item-affil">KPMG Advisory (China) · Sichuan</p>
+        <p class="item-desc">
+          Built an 8-module compliance and legal library (~150,000 characters) for an SOE automotive testing center,
+          converting it into a risk-management handbook for client self-assessment. Used Python to scrape and compare
+          22 internal policies, surfacing 20+ compliance gaps and streamlining the remediation workflow.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-date">Jul – Aug 2022</div>
+      <div>
+        <p class="item-title">New Energy Strategy Intern</p>
+        <p class="item-affil">CNOOC, New Energy Department · Beijing</p>
+        <p class="item-desc">
+          Synthesized China's "dual-carbon" policy landscape across solar, wind, and hydrogen sectors; benchmarked
+          renewable portfolios of leading domestic and international energy firms; co-authored strategy memos and
+          executive briefings supporting the firm's new-energy strategy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEYOND RESEARCH ============ -->
+  <section class="personal">
+    <h2>Beyond Research</h2>
+    <p>
+      I travel as often as my schedule allows — a habit I picked up moving between China, Australia, the U.K., and
+      the U.S., and one I have no intention of growing out of. At my desk, there is almost always a film or TV
+      series running quietly in the background; I find the company of half-watched stories steadies the long hours
+      of code and regression output.
+    </p>
+    <p>
+      I also write, occasionally, to keep track of where my thinking has been.
+    </p>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section>
+    <h2>Contact</h2>
+    <p>
+      The best way to reach me is by email at
+      <a href="mailto:lehandongwork@gmail.com" class="inline">lehandongwork@gmail.com</a>.
+      I aim to reply within 48 hours. I am actively seeking <em>full-time pre-doctoral or research-assistant positions</em>
+      starting in 2026, particularly in applied econometrics, structural estimation, labor and gender economics, or AI
+      governance and fairness. If you are a faculty member with an opening — or considering me for doctoral admission —
+      I would be glad to send a CV, transcripts, writing samples, or code.
+    </p>
+  </section>
+
+  <footer>
+    <span>Last updated: May 2026</span>
+    <span>Built with HTML &amp; care.</span>
+  </footer>
+
+</div>
+</body>
+</html>
