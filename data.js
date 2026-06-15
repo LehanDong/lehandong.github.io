@@ -8,7 +8,7 @@ const SITE = {
 
   /* ---------- Identity ---------- */
   name: "Lehan (Emma) Dong",
-  tagline: "Business analytics · applied AI · econometrics",
+  tagline: "Business analytics · Applied AI · Operation Management",
 
   /* ---------- Home photo(s) ----------
      Add the image files to the repo and list their filenames here.
