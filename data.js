@@ -21,7 +21,7 @@ const SITE = {
   /* ---------- Contact / links ---------- */
   email:    "lehandongwork@gmail.com",
   linkedin: "https://www.linkedin.com/in/lehandong",
-  github:   "https://github.com/LehanDong/lehanproject",
+  github:   "https://github.com/LehanDong",
 
   /* ---------- Home page intro (paragraphs) ---------- */
   home: [
