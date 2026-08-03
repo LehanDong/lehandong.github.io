@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Oxford HAI Lab at WAIC</title>
+  <desc id="desc">Minimal navy and blue event card for July 2026</desc>
+  <rect width="800" height="600" fill="#eef2f5"/>
+  <rect x="44" y="44" width="712" height="512" fill="#ffffff" stroke="#1e3557" stroke-width="3"/>
+  <path d="M520 44L756 44L756 280Z" fill="#dfe8f2"/>
+  <path d="M44 420C210 340 300 510 470 420C570 367 648 365 756 420V556H44Z" fill="#1e3557"/>
+  <text x="88" y="155" fill="#1e3557" font-family="Times New Roman, serif" font-size="80" font-weight="700">WAIC</text>
+  <text x="88" y="230" fill="#171717" font-family="Times New Roman, serif" font-size="32">Oxford Saïd HAI Lab</text>
+  <text x="88" y="482" fill="#ffffff" font-family="Times New Roman, serif" font-size="32">JULY 2026</text>
+  <text x="88" y="525" fill="#dfe8f2" font-family="Times New Roman, serif" font-size="22">SHANGHAI</text>
+</svg>

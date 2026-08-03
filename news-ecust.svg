@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">ECUST academic presentation</title>
+  <desc id="desc">Minimal burgundy academic event card for May 2026</desc>
+  <rect width="800" height="600" fill="#f4f0eb"/>
+  <rect x="44" y="44" width="712" height="512" fill="#ffffff" stroke="#7b1e2b" stroke-width="3"/>
+  <path d="M44 430H756" stroke="#7b1e2b" stroke-width="3"/>
+  <circle cx="650" cy="145" r="72" fill="none" stroke="#c9a7aa" stroke-width="3"/>
+  <circle cx="650" cy="145" r="50" fill="none" stroke="#c9a7aa" stroke-width="2"/>
+  <text x="88" y="145" fill="#7b1e2b" font-family="Times New Roman, serif" font-size="74" font-weight="700">ECUST</text>
+  <text x="88" y="222" fill="#171717" font-family="Times New Roman, serif" font-size="34">AI &amp; Social Work</text>
+  <text x="88" y="474" fill="#171717" font-family="Times New Roman, serif" font-size="32">MAY 2026</text>
+  <text x="88" y="520" fill="#666666" font-family="Times New Roman, serif" font-size="22">SHANGHAI</text>
+</svg>

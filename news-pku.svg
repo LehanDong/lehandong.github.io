@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Peking University academic presentation</title>
+  <desc id="desc">Minimal dark red academic event card for May 2026</desc>
+  <rect width="800" height="600" fill="#f3efea"/>
+  <rect x="44" y="44" width="712" height="512" fill="#7b1e2b"/>
+  <path d="M88 190H712M88 425H712" stroke="#d5b8bb" stroke-width="2"/>
+  <text x="88" y="145" fill="#ffffff" font-family="Times New Roman, serif" font-size="76" font-weight="700">PKU</text>
+  <text x="88" y="270" fill="#ffffff" font-family="Times New Roman, serif" font-size="34">Human–AI Boundaries</text>
+  <text x="88" y="328" fill="#ffffff" font-family="Times New Roman, serif" font-size="28">司法裁判中的人机边界</text>
+  <text x="88" y="482" fill="#ffffff" font-family="Times New Roman, serif" font-size="32">MAY 2026</text>
+  <text x="88" y="525" fill="#eadbdd" font-family="Times New Roman, serif" font-size="22">BEIJING</text>
+</svg>
