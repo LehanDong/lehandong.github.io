@@ -46,6 +46,14 @@ const SITE = {
     },
     {
       date: "May 2026",
+      venue: "Peking University",
+      image: "assets/news-pku.svg",
+      title: "Human–Algorithm Interaction Boundaries Academic Symposium",
+      description: `<strong>Presentation:</strong> <em>AI as Normative Reference: 
+      Stratified Emergence of Human–Algorithm Boundaries in Judicial Decision-Making`
+    },
+    {
+      date: "May 2026",
       venue: "East China University of Science and Technology",
       image: "assets/news-ecust.svg",
       title: "International Symposium on Artificial Intelligence and Social Work",
@@ -53,14 +61,6 @@ const SITE = {
         AI-assisted social work in identifying domestic-violence lethality risk — a retrospective study of
         203 reverse-killing cases.</em>`
     },
-    {
-      date: "May 2026",
-      venue: "Peking University",
-      image: "assets/news-pku.svg",
-      title: "Human–Algorithm Interaction Boundaries Academic Symposium",
-      description: `<strong>Presentation:</strong> <em>AI作为规范参照：司法裁判中人机边界的分层浮现机制</em>
-        —— 基于 211 例家暴反杀案受审记录的实证研究。`
-    }
   ],
 
   researchInterests: [
