@@ -1,6 +1,6 @@
 const SITE = {
   name: "Lehan (Emma) Dong",
-  role: "Research Assistant at Oxford Saïd Business School and Johns Hopkins Carey Business School",
+  role: "Research Assistant at Oxford Saïd Business School and Shanghai Artificial Intelligence Lab",
   tagline: "AI for Business · Applied AI · Operations Management",
   profilePhotos: ["photo.jpg", "photo2.jpg", "photo3.jpg"],
 
@@ -44,7 +44,7 @@ const SITE = {
         Oxford Saïd Business School.`
     },
     {
-      date: "May 2026",
+      date: "June 2026",
       venue: "Peking University",
       image: "assets/news-pku.svg",
       title: "Human–Algorithm Interaction Boundaries Academic Symposium",
@@ -52,7 +52,7 @@ const SITE = {
       Stratified Emergence of Human–Algorithm Boundaries in Judicial Decision-Making</em>`
     },
     {
-      date: "May 2026",
+      date: "June 2026",
       venue: "East China University of Science and Technology",
       image: "assets/news-ecust.svg",
       title: "International Symposium on Artificial Intelligence and Social Work",
