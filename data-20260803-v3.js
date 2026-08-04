@@ -1,7 +1,7 @@
 const SITE = {
   name: "Lehan (Emma) Dong",
   role: "Research Assistant at Oxford Saïd Business School and Johns Hopkins Carey Business School",
-  tagline: "Business Analytics · Applied AI · Operations Management",
+  tagline: "AI for Business · Applied AI · Operations Management",
   profilePhotos: ["photo.jpg", "photo2.jpg", "photo3.jpg"],
 
   contacts: [
@@ -15,17 +15,15 @@ const SITE = {
      <a href="https://carey.jhu.edu/" target="_blank" rel="noopener">Johns Hopkins University</a> (2025).
      I currently hold research assistantships at the
      <a href="https://www.sbs.ox.ac.uk/" target="_blank" rel="noopener">Saïd Business School, University of Oxford</a>
-     and Johns Hopkins Carey Business School.`,
+     and Shanghai Artificial Intelligence Laboratory.`,
 
     `My research lies at the intersection of econometrics, structural estimation, natural language processing,
-     and <em>AI for business and human–AI collaboration</em>. I study how algorithmic systems reshape
+     and <em> Applied AI and human–AI collaboration</em>. I study how algorithmic systems reshape
      decision-making across firms, courts, and labor markets, and how quantitative models can reveal the
      structures behind those decisions.`,
 
-    `I am also a research assistant at the Shanghai Artificial Intelligence Laboratory and was previously a
-     research assistant at the
-     <a href="https://www.pbcsf.tsinghua.edu.cn/" target="_blank" rel="noopener">PBC School of Finance, Tsinghua University</a>.
-     I am applying to Ph.D. programs for entry in fall 2027.`
+    `I was previously a research assistant at Johns Hopkins Carey Business School and 
+     <a href="https://www.pbcsf.tsinghua.edu.cn/" target="_blank" rel="noopener">PBC School of Finance, Tsinghua University</a>.`
   ],
 
   interestSummary: [
