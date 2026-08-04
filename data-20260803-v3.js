@@ -15,7 +15,8 @@ const SITE = {
      <a href="https://carey.jhu.edu/" target="_blank" rel="noopener">Johns Hopkins University</a> (2025).
      I currently hold research assistantships at the
      <a href="https://www.sbs.ox.ac.uk/" target="_blank" rel="noopener">Saïd Business School, University of Oxford</a>
-     and Shanghai Artificial Intelligence Laboratory.`,
+     and <a href="https://www.nature.com/nature-index/institution-outputs/china/shanghai-artificial-intelligence-laboratory/628dcd4f342df06592261358" target="_blank" rel="noopener">
+     Shanghai Artificial Intelligence Laboratory</a>.`,
 
     `My research lies at the intersection of econometrics, structural estimation, natural language processing,
      and <em> Applied AI and human–AI collaboration</em>. I study how algorithmic systems reshape
@@ -48,7 +49,7 @@ const SITE = {
       image: "assets/news-pku.svg",
       title: "Human–Algorithm Interaction Boundaries Academic Symposium",
       description: `<strong>Presentation:</strong> <em>AI as Normative Reference: 
-      Stratified Emergence of Human–Algorithm Boundaries in Judicial Decision-Making`
+      Stratified Emergence of Human–Algorithm Boundaries in Judicial Decision-Making</em>`
     },
     {
       date: "May 2026",
@@ -69,7 +70,7 @@ const SITE = {
         shift decision boundaries, and how people adapt to increasingly capable AI tools.`
     },
     {
-      title: "AI, Law, and Institutional Decision-Making",
+      title: "AI, Law and Institutional Decision-Making",
       description: `Using legal records and computational experiments, I study where human and machine reasoning
         agree and where they diverge. I am especially interested in the movement from factual recognition to
         normative interpretation in high-stakes judicial decisions.`
@@ -84,7 +85,7 @@ const SITE = {
       title: "Natural Language Processing and Computational Social Science",
       description: `I use language models and text-as-data methods to measure sentiment, model reasoning, and
         investigate social patterns at scale. This work connects computational measurement with substantive
-        questions in business, law, and labor markets.`
+        questions in business, gender, agent behavior and labor markets.`
     }
   ],
 
