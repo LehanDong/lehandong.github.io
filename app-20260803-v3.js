@@ -1,12 +1,23 @@
 (function () {
   const byId = (id) => document.getElementById(id);
 
+  function contactIcon(name) {
+    const icons = {
+      identity: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>`,
+      email: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>`,
+      linkedin: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M8 11v6M8 8v.01M12 17v-6M12 14a3 3 0 0 1 6 0v3"></path></svg>`,
+      github: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.4 5.4 0 0 0 19.4 3 5 5 0 0 0 19.3 1S18.2.6 15 2.7a15.4 15.4 0 0 0-8 0C3.8.6 2.7 1 2.7 1a5 5 0 0 0-.1 2 5.4 5.4 0 0 0-1.4 3.7c0 5.4 3.5 6.6 6.8 7C7.4 14.4 7 15.4 7 16.4V22"></path><path d="M7 19c-3 .9-3-1.5-4-2"></path></svg>`
+    };
+    return icons[name] || "";
+  }
+
   function renderContacts() {
     return SITE.contacts.map((item) => {
+      const icon = contactIcon(item.icon);
       if (item.type === "text") {
-        return `<span class="contact-text">${item.label}</span>`;
+        return `<span class="contact-item contact-text">${icon}<span>${item.label}</span></span>`;
       }
-      return `<a href="${item.href}" target="_blank" rel="noopener">${item.label}</a>`;
+      return `<a class="contact-item" href="${item.href}" target="_blank" rel="noopener">${icon}<span>${item.label}</span></a>`;
     }).join("");
   }
 

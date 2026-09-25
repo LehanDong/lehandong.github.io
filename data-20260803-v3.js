@@ -5,9 +5,10 @@ const SITE = {
   profilePhoto: "photo.jpg",
 
   contacts: [
-    { label: "lehandongwork [at] gmail [dot] com", type: "text" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/lehandong" },
-    { label: "GitHub", href: "https://github.com/LehanDong" }
+    { label: "Research Assistant & Research Intern", type: "text", icon: "identity" },
+    { label: "lehandongwork [at] gmail [dot] com", type: "text", icon: "email" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/lehandong", icon: "linkedin" },
+    { label: "GitHub", href: "https://github.com/LehanDong", icon: "github" }
   ],
 
   bio: [
