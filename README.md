@@ -2,18 +2,16 @@
 
 Static academic website for GitHub Pages. No build step is required.
 
-## Pages
+## Site structure
 
-- `index.html` — About and News
-- `research.html` — Research interests
-- `projects.html` — Current and selected research projects
-- `cv.html` — CV displayed through Google Docs Viewer on the published site
+The public site is a single page with anchored sections for About, Research,
+News, Education, and Life. Older standalone pages remain in the repository for
+reference but are not linked from the public navigation.
 
 ## Updating content
 
-Most text is stored in `data.js`. Edit the relevant entry, commit the change, and push to the `main` branch.
-
-The three News illustrations are in `assets/`. To use event photographs instead, add the images to the repository and update each `image` value in the `news` section of `data.js`.
+Public content is stored in `data-20260803-v3.js`. Edit the relevant entry,
+commit the change, and push to the `main` branch.
 
 ## Local preview
 

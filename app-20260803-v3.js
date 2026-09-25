@@ -1,13 +1,18 @@
 (function () {
   const byId = (id) => document.getElementById(id);
 
+  function renderContacts() {
+    return SITE.contacts.map((item) => {
+      if (item.type === "text") {
+        return `<span class="contact-text">${item.label}</span>`;
+      }
+      return `<a href="${item.href}" target="_blank" rel="noopener">${item.label}</a>`;
+    }).join('<span class="contact-divider" aria-hidden="true">/</span>');
+  }
+
   function renderAbout() {
     const target = byId("about");
     if (!target) return;
-
-    const contactLinks = SITE.contacts.map((item) =>
-      `<a href="${item.href}"${item.href.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${item.label}</a>`
-    ).join("<span aria-hidden=\"true\">/</span>");
 
     target.innerHTML = `
       <div class="about-copy">
@@ -15,84 +20,45 @@
         <h1 id="about-heading">${SITE.name}</h1>
         <p class="role">${SITE.role}</p>
         <div class="bio">${SITE.bio.map((paragraph) => `<p>${paragraph}</p>`).join("")}</div>
-        <p class="interest-line"><strong>Research interests:</strong> ${SITE.interestSummary.join(" · ")}</p>
-        <div class="contact-links" aria-label="Contact links">${contactLinks}</div>
+        <div class="contact-links" aria-label="Contact information">${renderContacts()}</div>
       </div>
-      <figure class="profile-card" id="profile-carousel" aria-label="Profile photo carousel">
-        <div class="profile-slides">
-          ${SITE.profilePhotos.map((photo, index) => `
-            <img class="profile-slide${index === 0 ? " is-active" : ""}"
-              src="${photo}" alt="Portrait of ${SITE.name}, photo ${index + 1}">
-          `).join("")}
-        </div>
-        <button class="profile-nav profile-prev" type="button" aria-label="Previous photo">&#8249;</button>
-        <button class="profile-nav profile-next" type="button" aria-label="Next photo">&#8250;</button>
-        <div class="profile-dots" aria-label="Choose a profile photo">
-          ${SITE.profilePhotos.map((_, index) => `
-            <button class="profile-dot${index === 0 ? " is-active" : ""}" type="button"
-              aria-label="Show photo ${index + 1}" aria-pressed="${index === 0}"></button>
-          `).join("")}
-        </div>
+      <figure class="profile-card">
+        <img src="${SITE.profilePhoto}" alt="Portrait of ${SITE.name}">
       </figure>`;
-
-    setupProfileCarousel();
   }
 
-  function setupProfileCarousel() {
-    const carousel = byId("profile-carousel");
-    if (!carousel) return;
+  function renderResearchItem(item) {
+    return `
+      <article class="research-item">
+        <h4>${item.title}</h4>
+        <p class="research-status">${item.status}</p>
+      </article>`;
+  }
 
-    const slides = Array.from(carousel.querySelectorAll(".profile-slide"));
-    const dots = Array.from(carousel.querySelectorAll(".profile-dot"));
-    const previous = carousel.querySelector(".profile-prev");
-    const next = carousel.querySelector(".profile-next");
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let activeIndex = 0;
-    let timer;
+  function renderResearch() {
+    const target = byId("research");
+    if (!target) return;
 
-    function showPhoto(index) {
-      activeIndex = (index + slides.length) % slides.length;
-      slides.forEach((slide, slideIndex) => {
-        slide.classList.toggle("is-active", slideIndex === activeIndex);
-      });
-      dots.forEach((dot, dotIndex) => {
-        const isActive = dotIndex === activeIndex;
-        dot.classList.toggle("is-active", isActive);
-        dot.setAttribute("aria-pressed", String(isActive));
-      });
-    }
-
-    function stopRotation() {
-      window.clearInterval(timer);
-    }
-
-    function startRotation() {
-      stopRotation();
-      if (!reducedMotion && slides.length > 1) {
-        timer = window.setInterval(() => showPhoto(activeIndex + 1), 5000);
-      }
-    }
-
-    previous.addEventListener("click", () => {
-      showPhoto(activeIndex - 1);
-      startRotation();
-    });
-    next.addEventListener("click", () => {
-      showPhoto(activeIndex + 1);
-      startRotation();
-    });
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showPhoto(index);
-        startRotation();
-      });
-    });
-    carousel.addEventListener("mouseenter", stopRotation);
-    carousel.addEventListener("mouseleave", startRotation);
-    carousel.addEventListener("focusin", stopRotation);
-    carousel.addEventListener("focusout", startRotation);
-
-    startRotation();
+    target.innerHTML = `
+      <h2 id="research-heading" class="section-title">Research</h2>
+      <div class="research-group">
+        <h3>Working Papers</h3>
+        <div class="research-list">${SITE.workingPapers.map(renderResearchItem).join("")}</div>
+      </div>
+      <div class="research-group">
+        <h3>Work in Progress</h3>
+        <div class="research-list">${SITE.workInProgress.map(renderResearchItem).join("")}</div>
+      </div>
+      <div class="research-group">
+        <h3>Selected Presentations</h3>
+        <div class="presentation-list">
+          ${SITE.presentations.map((item) => `
+            <article class="presentation-item">
+              <h4>${item.title}</h4>
+              <p>${item.venue} · ${item.date}</p>
+            </article>`).join("")}
+        </div>
+      </div>`;
   }
 
   function renderNews() {
@@ -103,50 +69,35 @@
       <h2 id="news-heading" class="section-title">News</h2>
       <div class="news-list">
         ${SITE.news.map((item) => `
-          <article class="news-item">
-            <img class="news-image" src="${item.image}" alt="${item.venue} — ${item.date}">
-            <div class="news-copy">
-              <p class="news-date">${item.date}</p>
-              <h3>${item.title}</h3>
-              <p class="news-venue">${item.venue}</p>
-              <p>${item.description}</p>
+          <p class="news-item"><em>${item.date}:</em> ${item.text}</p>`).join("")}
+      </div>`;
+  }
+
+  function renderEducation() {
+    const target = byId("education");
+    if (!target) return;
+
+    target.innerHTML = `
+      <h2 id="education-heading" class="section-title">Education</h2>
+      <div class="education-list">
+        ${SITE.education.map((item) => `
+          <article class="education-item">
+            <div>
+              <h3>${item.institution}</h3>
+              <p>${item.degree}</p>
             </div>
+            <p class="education-year">${item.year}</p>
           </article>`).join("")}
       </div>`;
   }
 
-  function renderResearch() {
-    const target = byId("research-interests");
+  function renderLife() {
+    const target = byId("life");
     if (!target) return;
 
-    target.innerHTML = SITE.researchInterests.map((item) => `
-      <section class="interest-section">
-        <h2>${item.title}</h2>
-        <p>${item.description}</p>
-      </section>`).join("");
-  }
-
-  function renderProjects() {
-    const target = byId("projects");
-    if (!target) return;
-
-    target.innerHTML = `<div class="project-list">${SITE.projects.map((item) => `
-      <article class="project-item">
-        <div class="project-date">${item.date}</div>
-        <div>
-          <h2>${item.title}</h2>
-          <p class="project-meta">${item.meta}</p>
-          <p>${item.description}</p>
-        </div>
-      </article>`).join("")}</div>`;
-  }
-
-  function renderCV() {
-    const target = byId("cv");
-    if (!target) return;
-
-    target.innerHTML = `<iframe class="cv-frame" src="${SITE.cvFile}#view=FitH"
-      title="Curriculum Vitae"></iframe>`;
+    target.innerHTML = `
+      <h2 id="life-heading" class="section-title">Life</h2>
+      <p class="life-copy">${SITE.life}</p>`;
   }
 
   function renderFooter() {
@@ -157,10 +108,10 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     renderAbout();
-    renderNews();
     renderResearch();
-    renderProjects();
-    renderCV();
+    renderNews();
+    renderEducation();
+    renderLife();
     renderFooter();
   });
 })();
