@@ -7,7 +7,7 @@
         return `<span class="contact-text">${item.label}</span>`;
       }
       return `<a href="${item.href}" target="_blank" rel="noopener">${item.label}</a>`;
-    }).join('<span class="contact-divider" aria-hidden="true">/</span>');
+    }).join("");
   }
 
   function renderAbout() {
@@ -20,18 +20,17 @@
         <h1 id="about-heading">${SITE.name}</h1>
         <p class="role">${SITE.role}</p>
         <div class="bio">${SITE.bio.map((paragraph) => `<p>${paragraph}</p>`).join("")}</div>
-        <div class="contact-links" aria-label="Contact information">${renderContacts()}</div>
       </div>
       <figure class="profile-card">
         <img src="${SITE.profilePhoto}" alt="Portrait of ${SITE.name}">
+        <figcaption class="contact-links" aria-label="Contact information">${renderContacts()}</figcaption>
       </figure>`;
   }
 
   function renderResearchItem(item) {
     return `
       <article class="research-item">
-        <h4>${item.title}</h4>
-        <p class="research-status">${item.status}</p>
+        <h4>${item.title}. <span class="research-status">${item.status}</span></h4>
       </article>`;
   }
 
@@ -66,11 +65,11 @@
     if (!target) return;
 
     target.innerHTML = `
-      <h2 id="news-heading" class="section-title">News</h2>
-      <div class="news-list">
+      <h2 id="news-heading" class="section-title"><span aria-hidden="true">🔥</span> News</h2>
+      <ul class="news-list">
         ${SITE.news.map((item) => `
-          <p class="news-item"><em>${item.date}:</em> ${item.text}</p>`).join("")}
-      </div>`;
+          <li class="news-item"><em>${item.date}:</em> ${item.text}</li>`).join("")}
+      </ul>`;
   }
 
   function renderEducation() {

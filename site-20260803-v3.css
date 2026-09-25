@@ -117,16 +117,14 @@ h1 {
 .bio p { margin: 0 0 10px; }
 
 .contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px 11px;
-  margin-top: 16px;
-  align-items: baseline;
+  display: grid;
+  gap: 3px;
+  margin-top: 9px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-.contact-divider { color: #b2b2b2; }
 .contact-text { color: var(--text); }
 
 .profile-card { margin: 4px 0 0; }
@@ -159,6 +157,8 @@ h1 {
 
 .research-group > h3 {
   margin: 0 0 14px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line);
   color: var(--muted);
   font-size: 14px;
   font-weight: 680;
@@ -173,7 +173,6 @@ h1 {
 .research-item,
 .presentation-item {
   padding: 11px 0;
-  border-bottom: 1px solid var(--line);
 }
 
 .research-item:first-child,
@@ -182,31 +181,37 @@ h1 {
 .research-item h4,
 .presentation-item h4 {
   max-width: 790px;
-  margin: 0 0 5px;
+  margin: 0 0 4px;
   font-size: 19px;
   font-weight: 620;
   line-height: 1.4;
 }
 
-.research-status,
 .presentation-item p {
   margin: 0;
   color: var(--muted);
   font-size: 15px;
 }
 
-.research-status { font-style: italic; }
+.research-status {
+  color: var(--muted);
+  font-size: inherit;
+  font-style: italic;
+  font-weight: 400;
+}
 
 .news-list {
   display: grid;
   max-width: 840px;
   gap: 7px;
+  margin: 0;
+  padding-left: 1.25em;
 }
 
 .news-item { margin: 0; }
 
 .news-item em {
-  color: var(--accent);
+  color: var(--text);
   font-weight: 620;
 }
 
@@ -215,7 +220,6 @@ h1 {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 30px;
   padding: 11px 0;
-  border-bottom: 1px solid var(--line);
 }
 
 .education-item:first-child { padding-top: 3px; }

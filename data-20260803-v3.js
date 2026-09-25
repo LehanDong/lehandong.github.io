@@ -1,5 +1,5 @@
 const SITE = {
-  name: "Lehan (Emma) Dong",
+  name: "Lehan Dong",
   role: "Research Assistant at Oxford Saïd Business School · Research Intern at Shanghai Artificial Intelligence Laboratory",
   tagline: "Human–AI Interaction · AI-Enabled Decision-Making · Operations Management",
   profilePhoto: "photo.jpg",
@@ -24,17 +24,19 @@ const SITE = {
     `I received an M.S. in Business Analytics and Risk Management from
      <a href="https://carey.jhu.edu/" target="_blank" rel="noopener">Johns Hopkins University</a>.
      I was previously a research assistant at Johns Hopkins Carey Business School and the
-     <a href="https://www.pbcsf.tsinghua.edu.cn/" target="_blank" rel="noopener">PBC School of Finance, Tsinghua University</a>.`
+     <a href="https://www.pbcsf.tsinghua.edu.cn/" target="_blank" rel="noopener">PBC School of Finance, Tsinghua University</a>.`,
+
+    `I am always happy to chat—feel free to reach out via email!`
   ],
 
   workingPapers: [
     {
-      title: "How Retail System Complexity Drives Inventory Record Inaccuracy: Empirical Evidence from Cross-Border E-Commerce",
-      status: "Preparing for resubmission to the Journal of Operations Management."
-    },
-    {
       title: "Asymmetric Dynamic Bayesian Learning in Human–AI Collaborative Decision Making: Evidence from Venture Capital Investment Screening",
       status: "Working paper."
+    },
+    {
+      title: "How Retail System Complexity Drives Inventory Record Inaccuracy: Empirical Evidence from Cross-Border E-Commerce",
+      status: "Preparing for resubmission to the Journal of Operations Management."
     }
   ],
 
@@ -66,7 +68,7 @@ const SITE = {
   news: [
     {
       date: "Jul 2026",
-      text: "Participated in the World Artificial Intelligence Conference as a member of the Oxford Human–Algorithm Interaction Lab. I am grateful to my supervisor, Prof. Kejia Hu, for her guidance and support."
+      text: "Participated in the World Artificial Intelligence Conference as a member of the Oxford Human–Algorithm Interaction Lab. Thanks to my supervisor, Prof. Kejia Hu, for her guidance and support."
     },
     {
       date: "Jun 2026",
@@ -74,7 +76,7 @@ const SITE = {
     },
     {
       date: "Jun 2026",
-      text: "Presented our paper, <em>AI as Normative Reference: Stratified Emergence of Human–Algorithm Boundaries in Decision-Making</em>, at the Human–Algorithm Interaction Boundaries Academic Symposium. I am grateful to my co-author Danni for her collaboration."
+      text: "Presented our paper, <em>AI as Normative Reference: Stratified Emergence of Human–Algorithm Boundaries in Decision-Making</em>, at the Human–Algorithm Interaction Boundaries Academic Symposium. Thanks to my co-author Danni for her collaboration."
     },
     {
       date: "Feb 2026",
