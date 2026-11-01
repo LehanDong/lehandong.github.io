@@ -68,6 +68,14 @@ const SITE = {
 
   news: [
     {
+      date: "Oct 2026",
+      text: "Our paper has been accepted to the Interpreting Agent Behavior (IAB) workshop at NeurIPS 2026! Many thanks to my wonderful co-authors, Danni Wang and Meng Zhang, for their collaboration and support."
+    },
+    {
+      date: "Oct 2026",
+      text: "Joined the Business Analytics course as a Teaching Assistant. Thank you to Prof. Yuexing Li for the opportunity and support!"
+    },
+    {
       date: "Jul 2026",
       text: "Participated in the World Artificial Intelligence Conference as a member of the Oxford Human–Algorithm Interaction Lab. Thanks to my supervisor, Prof. Kejia Hu, for her guidance and support."
     },
@@ -102,5 +110,5 @@ const SITE = {
     experimenting with cocktails. The business leader I admire most is Lisa Su. One day, I hope
     to earn a pilot’s license, although my eyesight may have other plans.`,
 
-  updated: "September 2026"
+  updated: "November 2026"
 };
